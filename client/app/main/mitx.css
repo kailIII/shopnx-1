@@ -71,6 +71,7 @@ rzslider span.rz-bar.rz-selection {
   z-index: 11;
 }
 
+/* customize the features search color */
 .nav-search .nav-search-icon {
   background-color: transparent;
   color: #ffa100 !important;
