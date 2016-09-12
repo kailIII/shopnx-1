@@ -89,7 +89,7 @@ _________________________________________________________ -->
 
                   <div class="row" id="thumbs">
                       <div class="col-xs-4" ng-repeat="v in product.variants" ng-click="changeIndex($index);" ng-if="v.size!=product.variants[i].size">
-                          <a href="" class="thumb">
+                          <a href="" class="thumb bg-white">
                               <img ng-src="/assets/clothing/{{v.image}}" err-src="/assets/images/photo.png" alt="{{product.name}}" class="img-responsive">
                               {{product.name}} (Size: {{v.size}})
                               <p class="price"><del class="text-muted" ng-if="v.price!=v.mrp" >${{v.mrp}}</del>&nbsp;${{v.price}}</p>

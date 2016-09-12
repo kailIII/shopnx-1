@@ -85,6 +85,10 @@ rzslider span.rz-bar.rz-selection {
   /*background: transparent;*/
 }
 
+.bg-white {
+  background-color: #ffffff;
+}
+
 @media (min-width: 1700px) {
   .container {
     width: 1680px;
@@ -93,4 +97,10 @@ rzslider span.rz-bar.rz-selection {
 /* center the image in home page product */
 div img{
   margin:0 auto;
+}
+
+#content #mainImage {
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
 }
