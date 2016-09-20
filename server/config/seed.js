@@ -156,7 +156,7 @@ PaymentMethod.find(function (err, data) {
     {
         name: 'Stripe',
         email: 'pk_test_yx7WB1bgM5SlxCPif7DxJk1N',
-        options: { chargeurl : "http://mitx.ca/order" },
+        options: { chargeurl : "http://biri.in/order" },
         active : true
     });
   }
