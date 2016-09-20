@@ -447,7 +447,8 @@ ShoppingCart.prototype.checkoutStripe = function (parms, clearCart) {
     // First, you have to initialize the Stripe API w/ your public/private keys.
     // You then call Customer.create() w/ the stripeToken and your email address.
     // Then you call Charge.create() w/ the customer ID from the previous call and your charge amount.
-    form.attr("action", parms.options['chargeurl']);
+    //form.attr("action", parms.options['chargeurl']);
+    form.attr("action", '/stripe'); //TODO: need to create "router.post('/stripe', helpers.ensureAuthenticated, function(req, res, next) {" for server side payment
     form.attr("method", "POST");
     form.attr("style", "display:none;");
     this.addFormFields(form, data);
