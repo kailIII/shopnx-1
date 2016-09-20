@@ -65,6 +65,17 @@ Shipping.find(function (err, data) {
           "freeShipping" : 1000,
           "active" : true,
           "__v" : 0
+      },
+      {
+        "_id" : "57e1616b06a05b29e1ce53c0",
+        "carrier" : "UPS",
+        "country" : "Canada",
+        "charge" : 50,
+        "minWeight" : 100,
+        "maxWeight" : 500,
+        "freeShipping" : 1000,
+        "active" : true,
+        "__v" : 0
       }
     );
   }
@@ -144,8 +155,8 @@ PaymentMethod.find(function (err, data) {
     },
     {
         name: 'Stripe',
-        email: 'pk_test_srKHaSHynBIVLX03r33xLszb',
-        options: { chargeurl : "http://biri.in/order" },
+        email: 'pk_test_yx7WB1bgM5SlxCPif7DxJk1N',
+        options: { chargeurl : "http://mitx.ca/order" },
         active : true
     });
   }
