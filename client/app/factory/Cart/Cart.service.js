@@ -254,11 +254,11 @@ ShoppingCart.prototype.checkout = function (serviceName, clearCart) {
   // // shopping cart with Stripe, you have to create a merchant account with
   // // Stripe. You can do that here:
   // // https://manage.stripe.com/register
-  // this.addCheckoutParameters("Stripe", "pk_test_srKHaSHynBIVLX03r33xLszb",
-  //     {
-  //         chargeurl: "http://biri.in/order"
-  //     }
-  // );
+   this.addCheckoutParameters("Stripe", "pk_test_yx7WB1bgM5SlxCPif7DxJk1N",
+       {
+           chargeurl: "http://biri.in/order"
+       }
+   );
 
 // console.log(serviceName);
     // select serviceName if we have to
@@ -469,10 +469,10 @@ ShoppingCart.prototype.checkoutStripe = function (parms, clearCart) {
 
     var token = function (res) {
         var $input = $('<input type=hidden name=stripeToken />').val(res.id);
-
+        console.log("Step2: get token.id=" + res.id);
         // show processing message and block UI until form is submitted and returns
-        $.blockUI({ message: 'Processing order...' });
-
+      $.blockUI({ message: 'Processing order...' });
+      setTimeout($.unblockUI, 9000);
         // submit form
         form.append($input).submit();
         this.clearCart = clearCart == null || clearCart;
@@ -482,13 +482,19 @@ ShoppingCart.prototype.checkoutStripe = function (parms, clearCart) {
     var ship = this.getTotalPriceAfterShipping();
     StripeCheckout.open({
         key: parms.merchantID,
-        address: false,
+        billingAddress: false,
         amount: ship.grandTotal *100, /** expects an integer **/
         currency: 'usd',
         name: 'Purchase',
         description: 'Description',
         panelLabel: 'Checkout',
-        token: token
+        token: token,
+        opened: function(){
+          console.log("Step 1: opened...");
+        },
+        closed: function(){
+          console.log("Step3: PayForm is closed, then invoke server payment!");
+        }
     });
 }
 
