@@ -14,9 +14,9 @@ exports.active = function(req, res) {
     async.each(shipping, function(a, callback){
       // var a = a.toObject();
     // console.log(a);
-      Country.find({name:a}, function (err, countrys) {
+      Country.find({name:a}, function (err, countries) {
         if(err) { return handleError(res, err); }
-        selectedCountry.push(countrys[0]);
+        selectedCountry.push(countries[0]);
         callback();
       });
     },
@@ -27,11 +27,11 @@ exports.active = function(req, res) {
   });
 };
 
-// Get list of countrys
+// Get list of countries
 exports.index = function(req, res) {
-  Country.find(function (err, countrys) {
+  Country.find(function (err, countries) {
     if(err) { return handleError(res, err); }
-    return res.status(200).json(countrys);
+    return res.status(200).json(countries);
   });
 };
 
