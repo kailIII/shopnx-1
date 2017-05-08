@@ -1,3 +1,5 @@
+# v1.0
+
 # ShopNX - Shopping Cart with AngularJS (eCommerce web application)
 A single page Shopping Cart web applications with many necessary features of an ecommerce application.
 
@@ -66,3 +68,5 @@ The following are basic commands which will generate the required code for your 
 
 ### Future Plan
 * Plan to add OAUTH login with facebook, gmail, twitter
+
+
