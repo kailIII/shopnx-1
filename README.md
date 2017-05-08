@@ -1,4 +1,4 @@
-# v1.0
+# v1.1
 
 # ShopNX - Shopping Cart with AngularJS (eCommerce web application)
 A single page Shopping Cart web applications with many necessary features of an ecommerce application.
